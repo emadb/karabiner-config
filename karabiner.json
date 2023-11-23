@@ -10,7 +10,7 @@
         {
             "complex_modifications": {
                 "parameters": {
-                    "basic.simultaneous_threshold_milliseconds": 50,
+                    "basic.simultaneous_threshold_milliseconds": 100,
                     "basic.to_delayed_action_delay_milliseconds": 500,
                     "basic.to_if_alone_timeout_milliseconds": 1000,
                     "basic.to_if_held_down_threshold_milliseconds": 500,
@@ -18,23 +18,72 @@
                 },
                 "rules": [
                     {
-                        "description": "CAPS LOCK + asdf to Shift/Ctrl/Alt/Cmd",
+                        "description": "Layer - mod-layer",
                         "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "return_or_enter"
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "mod-layer",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "mod-layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "return_or_enter"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "caps_lock"
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "mod-layer",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "mod-layer",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "caps_lock"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
                             {
                                 "conditions": [
                                     {
-                                        "name": "nav_layer",
+                                        "name": "mod-layer",
                                         "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "a",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
+                                    "key_code": "a"
                                 },
                                 "to": [
                                     {
@@ -46,18 +95,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "nav_layer",
+                                        "name": "mod-layer",
                                         "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "s",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
+                                    "key_code": "s"
                                 },
                                 "to": [
                                     {
@@ -69,18 +113,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "nav_layer",
+                                        "name": "mod-layer",
                                         "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "d",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
+                                    "key_code": "d"
                                 },
                                 "to": [
                                     {
@@ -92,18 +131,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "nav_layer",
+                                        "name": "mod-layer",
                                         "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "f",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
+                                    "key_code": "f"
                                 },
                                 "to": [
                                     {
@@ -113,28 +147,73 @@
                                 "type": "basic"
                             },
                             {
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
+                                "conditions": [
+                                    {
+                                        "name": "mod-layer",
+                                        "type": "variable_if",
+                                        "value": 1
                                     }
+                                ],
+                                "from": {
+                                    "key_code": "quote"
                                 },
                                 "to": [
                                     {
-                                        "set_variable": {
-                                            "name": "nav_layer",
-                                            "value": 1
-                                        }
+                                        "key_code": "right_shift"
                                     }
                                 ],
-                                "to_after_key_up": [
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
                                     {
-                                        "set_variable": {
-                                            "name": "nav_layer",
-                                            "value": 0
-                                        }
+                                        "name": "mod-layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "semicolon"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_control"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "mod-layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "l"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_option"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "mod-layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "k"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_command"
                                     }
                                 ],
                                 "type": "basic"
@@ -142,27 +221,43 @@
                         ]
                     },
                     {
-                        "description": "CAPS LOCK + jkli to arrow keys",
+                        "description": "DuoLayer a s",
                         "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "name": "nav_layer",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
                                 "from": {
-                                    "key_code": "j",
                                     "modifiers": {
                                         "optional": [
                                             "any"
                                         ]
+                                    },
+                                    "simultaneous": [
+                                        {
+                                            "key_code": "a"
+                                        },
+                                        {
+                                            "key_code": "s"
+                                        }
+                                    ],
+                                    "simultaneous_options": {
+                                        "to_after_key_up": [
+                                            {
+                                                "set_variable": {
+                                                    "name": "duo-layer-a-s",
+                                                    "value": 0
+                                                }
+                                            }
+                                        ]
                                     }
+                                },
+                                "parameters": {
+                                    "basic.simultaneous_threshold_milliseconds": 200
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_arrow"
+                                        "set_variable": {
+                                            "name": "duo-layer-a-s",
+                                            "value": 1
+                                        }
                                     }
                                 ],
                                 "type": "basic"
@@ -170,41 +265,13 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "nav_layer",
+                                        "name": "duo-layer-a-s",
                                         "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "down_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "nav_layer",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "i",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
+                                    "key_code": "i"
                                 },
                                 "to": [
                                     {
@@ -216,87 +283,53 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "nav_layer",
+                                        "name": "duo-layer-a-s",
                                         "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
+                                    "key_code": "j"
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_arrow"
+                                        "key_code": "left_arrow"
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
+                                "conditions": [
+                                    {
+                                        "name": "duo-layer-a-s",
+                                        "type": "variable_if",
+                                        "value": 1
                                     }
+                                ],
+                                "from": {
+                                    "key_code": "k"
                                 },
                                 "to": [
                                     {
-                                        "set_variable": {
-                                            "name": "nav_layer",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "nav_layer",
-                                            "value": 0
-                                        }
+                                        "key_code": "down_arrow"
                                     }
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "ENTER + jkli to arrow keys",
-                        "manipulators": [
+                            },
                             {
-                                "conditions": [],
-                                "from": {
-                                    "key_code": "return_or_enter",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
+                                "conditions": [
+                                    {
+                                        "name": "duo-layer-a-s",
+                                        "type": "variable_if",
+                                        "value": 1
                                     }
+                                ],
+                                "from": {
+                                    "key_code": "l"
                                 },
                                 "to": [
                                     {
-                                        "set_variable": {
-                                            "name": "nav_layer",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "nav_layer",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "return_or_enter"
+                                        "key_code": "right_arrow"
                                     }
                                 ],
                                 "type": "basic"
