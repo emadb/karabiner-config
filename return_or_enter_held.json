@@ -1,0 +1,28 @@
+ {
+    "description": "RETURN + ';lk to Shift/Ctrl/Alt/Cmd",
+    "manipulators": [
+        {
+            "from": {
+                "key_code": "return_or_enter",
+                "modifiers": {
+                    "optional": ["any"]
+                }
+            },
+            "parameters": {
+                "basic.to_if_alone_timeout_milliseconds": 250,
+                "basic.to_if_held_down_threshold_milliseconds": 250
+            },
+            "to_if_alone": [
+                {
+                    "key_code": "return_or_enter"
+                }
+            ],
+            "to_if_held_down": [
+                {
+                    "key_code": "A"
+                }
+            ],
+            "type": "basic"
+        }
+    ]
+    } 
