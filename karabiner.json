@@ -36,18 +36,18 @@
                 ],
                 "to_if_alone": [
                   {
-                    "key_code": "caps_lock"
+                    "key_code": "escape"
                   }
                 ]
               },
               {
                 "type": "basic",
                 "from": {
-                  "key_code": "a"
+                  "key_code": "i"
                 },
                 "to": [
                   {
-                    "key_code": "left_shift"
+                    "key_code": "up_arrow"
                   }
                 ],
                 "conditions": [
@@ -61,11 +61,11 @@
               {
                 "type": "basic",
                 "from": {
-                  "key_code": "s"
+                  "key_code": "j"
                 },
                 "to": [
                   {
-                    "key_code": "left_control"
+                    "key_code": "left_arrow"
                   }
                 ],
                 "conditions": [
@@ -79,11 +79,11 @@
               {
                 "type": "basic",
                 "from": {
-                  "key_code": "d"
+                  "key_code": "k"
                 },
                 "to": [
                   {
-                    "key_code": "left_option"
+                    "key_code": "down_arrow"
                   }
                 ],
                 "conditions": [
@@ -97,11 +97,47 @@
               {
                 "type": "basic",
                 "from": {
-                  "key_code": "f"
+                  "key_code": "l"
                 },
                 "to": [
                   {
-                    "key_code": "left_command"
+                    "key_code": "right_arrow"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "mod-layer",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "o"
+                },
+                "to": [
+                  {
+                    "key_code": "page_up"
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "mod-layer",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "period"
+                },
+                "to": [
+                  {
+                    "key_code": "page_down"
                   }
                 ],
                 "conditions": [
@@ -120,7 +156,7 @@
               {
                 "type": "basic",
                 "from": {
-                  "key_code": "i",
+                  "key_code": "a",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -129,7 +165,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "up_arrow"
+                    "key_code": "left_shift"
                   }
                 ],
                 "conditions": [
@@ -143,7 +179,7 @@
               {
                 "type": "basic",
                 "from": {
-                  "key_code": "j",
+                  "key_code": "s",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -152,7 +188,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "left_arrow"
+                    "key_code": "left_control"
                   }
                 ],
                 "conditions": [
@@ -166,7 +202,7 @@
               {
                 "type": "basic",
                 "from": {
-                  "key_code": "k",
+                  "key_code": "d",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -175,7 +211,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "down_arrow"
+                    "key_code": "left_option"
                   }
                 ],
                 "conditions": [
@@ -189,7 +225,7 @@
               {
                 "type": "basic",
                 "from": {
-                  "key_code": "l",
+                  "key_code": "f",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -198,53 +234,7 @@
                 },
                 "to": [
                   {
-                    "key_code": "right_arrow"
-                  }
-                ],
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "nav-layer",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "type": "basic",
-                "from": {
-                  "key_code": "o",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "page_up"
-                  }
-                ],
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "nav-layer",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "type": "basic",
-                "from": {
-                  "key_code": "period",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "page_down"
+                    "key_code": "left_command"
                   }
                 ],
                 "conditions": [
@@ -268,7 +258,7 @@
                     }
                   },
                   {
-                    "key_code": "up_arrow"
+                    "key_code": "left_shift"
                   }
                 ],
                 "from": {
@@ -277,7 +267,7 @@
                       "key_code": "spacebar"
                     },
                     {
-                      "key_code": "i"
+                      "key_code": "a"
                     }
                   ],
                   "simultaneous_options": {
@@ -314,7 +304,7 @@
                     }
                   },
                   {
-                    "key_code": "left_arrow"
+                    "key_code": "left_control"
                   }
                 ],
                 "from": {
@@ -323,7 +313,7 @@
                       "key_code": "spacebar"
                     },
                     {
-                      "key_code": "j"
+                      "key_code": "s"
                     }
                   ],
                   "simultaneous_options": {
@@ -360,7 +350,7 @@
                     }
                   },
                   {
-                    "key_code": "down_arrow"
+                    "key_code": "left_option"
                   }
                 ],
                 "from": {
@@ -369,7 +359,7 @@
                       "key_code": "spacebar"
                     },
                     {
-                      "key_code": "k"
+                      "key_code": "d"
                     }
                   ],
                   "simultaneous_options": {
@@ -406,7 +396,7 @@
                     }
                   },
                   {
-                    "key_code": "right_arrow"
+                    "key_code": "left_command"
                   }
                 ],
                 "from": {
@@ -415,99 +405,7 @@
                       "key_code": "spacebar"
                     },
                     {
-                      "key_code": "l"
-                    }
-                  ],
-                  "simultaneous_options": {
-                    "detect_key_down_uninterruptedly": true,
-                    "key_down_order": "strict",
-                    "key_up_order": "strict_inverse",
-                    "key_up_when": "any",
-                    "to_after_key_up": [
-                      {
-                        "set_variable": {
-                          "name": "nav-layer",
-                          "value": 0
-                        }
-                      }
-                    ]
-                  },
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                }
-              },
-              {
-                "type": "basic",
-                "parameters": {
-                  "basic.simultaneous_threshold_milliseconds": 500
-                },
-                "to": [
-                  {
-                    "set_variable": {
-                      "name": "nav-layer",
-                      "value": 1
-                    }
-                  },
-                  {
-                    "key_code": "page_up"
-                  }
-                ],
-                "from": {
-                  "simultaneous": [
-                    {
-                      "key_code": "spacebar"
-                    },
-                    {
-                      "key_code": "o"
-                    }
-                  ],
-                  "simultaneous_options": {
-                    "detect_key_down_uninterruptedly": true,
-                    "key_down_order": "strict",
-                    "key_up_order": "strict_inverse",
-                    "key_up_when": "any",
-                    "to_after_key_up": [
-                      {
-                        "set_variable": {
-                          "name": "nav-layer",
-                          "value": 0
-                        }
-                      }
-                    ]
-                  },
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                }
-              },
-              {
-                "type": "basic",
-                "parameters": {
-                  "basic.simultaneous_threshold_milliseconds": 500
-                },
-                "to": [
-                  {
-                    "set_variable": {
-                      "name": "nav-layer",
-                      "value": 1
-                    }
-                  },
-                  {
-                    "key_code": "page_down"
-                  }
-                ],
-                "from": {
-                  "simultaneous": [
-                    {
-                      "key_code": "spacebar"
-                    },
-                    {
-                      "key_code": "period"
+                      "key_code": "f"
                     }
                   ],
                   "simultaneous_options": {
